@@ -7,9 +7,10 @@
 
 name: Build_wrt3200
 
+# Add a button to trigger the workflow - Kuroko
 on: 
-  release:
-    types: [published]
+  repository_dispatch:
+  workflow_dispatch:
 
   #push:
   #  branches: 
