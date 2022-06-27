@@ -90,7 +90,7 @@ jobs:
 
     - name: Configuration Customization - Build_OP_New
       env:
-        CONFIG_FILE: 'wrt3200.config'
+        CONFIG_FILE: 'New3200.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
