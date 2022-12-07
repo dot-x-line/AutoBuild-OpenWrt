@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_wrt3200
+name: Build_OP_WRT3200
 
 # Add a button to trigger the workflow - Kuroko
 on: 
@@ -66,6 +66,7 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
+        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
     #    echo "src-git kenzo https://github.com/kenzok8/openwrt-packages" >> ./feeds.conf.default
     #    echo "src-git small https://github.com/kenzok8/small" >> ./feeds.conf.default
 
@@ -87,7 +88,7 @@ jobs:
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
 
-    - name: Configuration Customization - Build_wrt3200
+    - name: Configuration Customization - Build_OP_WRT3200
       env:
         CONFIG_FILE: 'wrt3200.config'
       run: |
